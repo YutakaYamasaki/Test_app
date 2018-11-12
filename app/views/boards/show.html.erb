@@ -1,0 +1,16 @@
+<div class="text-left">
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @board.title %>
+</h1>
+<h6>
+  <%= @board.created_at %>
+</h6>
+
+<p>
+  <%= simple_format(@board.content) %>
+</p>
+</div>
+<%= link_to 'Edit', edit_board_path(@board) %> |
+<%= link_to 'Back', boards_path %>

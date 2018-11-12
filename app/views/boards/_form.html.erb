@@ -1,0 +1,29 @@
+<div class="form-horizontal" role="form">
+<%= form_with(model: board, local: true) do |form| %>
+  <% if board.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(board.errors.count, "error") %> prohibited this board from being saved:</h2>
+
+      <ul>
+      <% board.errors.full_messages.each do |message| %>
+        <li class="center"><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field text-left">
+    <%= form.label :title,:class => "col-sm-3 control-label" %>
+    <%= form.text_field :title,:size => 40 %>
+  </div>
+
+  <div class="field text-left">
+    <%= form.label :content,:class => "col-sm-3 control-label" %>
+    <%= form.text_area :content,:cols => 40, :rows => 10 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit("Post or Update") %>
+  </div>
+<% end %>
+</div>
